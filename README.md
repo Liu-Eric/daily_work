@@ -1,2 +1,1 @@
-# daily_work
-log daily work
+python笔记
