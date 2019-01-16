@@ -1,0 +1,64 @@
+#python-logging模块
+import logging
+#创建logger实例
+logger = logging.getLogger(logger_name)
+#将log写入文件
+handler = logging.FileHandler("log.txt")
+#Logging有如下级别: DEBUG，INFO，WARNING，ERROR，CRITICAL
+handler.setLevel(logging.INFO)
+#Formatter对象定义了最终log信息的顺序,结构和内容，接受两个可选参数:一个信息格式字符串和一个日期格式字符串.如果没有信息格式字符串,直接输出log信息.如果没有日期格式字符串,默认的格式是:%Y-%m-%d %H:%M:%S
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s',datefmt='%a, %d %b %Y %H:%M:%S')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+#将log输入屏幕
+console = logging.StreamHandler()
+console.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+console.setFormatter(formatter)
+logger.addHandler(console)
+#创建log
+logger.info("Start print log")
+logger.debug("Do something")
+logger.warning("Something maybe fail.")
+logger.info("Finish")
+#捕获traceback
+try:
+    pass
+except Exception:
+    logger.error("Faild to open sklearn.txt from logger.error",exc_info = True)
+    or
+    logger.exception("Failed to open sklearn.txt from logger.exception")
+#多模块使用logging
+#主模块mainModule.py，
+logger = logging.getLogger("mainModule")
+#logger配置
+pass
+#子模块subModule.py
+module_logger = logging.getLogger("mainModule.sub")
+主模块定义了logger'mainModule'，并对它进行了配置，就可以在同一解释器进程里面的其他地方通过getLogger('mainModule.xxx')得到的一样配置的logger实例，所谓的父子logger是通过命名来识别，任意以'mainModule'开头的logger都是它的子logger，例如'mainModule.sub'。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
