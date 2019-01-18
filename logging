@@ -2,6 +2,7 @@
 import logging
 #创建logger实例
 logger = logging.getLogger(logger_name)
+logging.basicConfig(level = logging.DEBUG,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 #将log写入文件
 handler = logging.FileHandler("log.txt")
 #Logging有如下级别: DEBUG，INFO，WARNING，ERROR，CRITICAL
