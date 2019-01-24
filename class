@@ -1,0 +1,48 @@
+#类的定义
+class Student(object):
+    #定义属性
+    def __init__(self, name, score):
+        self.name = name
+        #定义私有变量
+        self.__score = score
+    #定义方法
+    def print_score(self):
+        print('%s: %s' % (self.name, self.score))
+    #访问私有变量
+    def get_score(self):
+        return self.__score
+需要注意的是，在Python中，变量名类似__xxx__的，也就是以双下划线开头，并且以双下划线结尾的，是特殊变量，特殊变量是可以直接访问的，不是private变量
+一个下划线开头的实例变量名，比如_name，这样的实例变量外部是可以访问的，但是，按照约定俗成的规定，虽我可以被访问，但是，尽量不要访问。 
+私有变量访问：>>> bart._Student__name，即私有变量的实现是通过修改属性的名称。
+#继承
+父类
+class Animal(object):
+    def run(self):
+        print('Animal is running...')
+子类    
+class Dog(Animal):
+    def run(self):
+        print('Dog is running...')
+动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子
+dir(x)获取x对象的属性和方法
+x.hasattr, x.setattr
+#定义类的属性
+class Student(object):
+    name = 'Student'
+#限制实例可以绑定的属性
+class Student(object):
+__slots__ = ('name', 'age') 
+#给类绑定新的方法
+class Student(object):
+    pass
+def func(self, x):
+    pass
+Student.func = func
+
+        
+        
+        
+        
+        
+        
+        
