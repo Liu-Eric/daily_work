@@ -22,6 +22,8 @@ class Dog(Animal):
     def run(self):
         print('Dog is running...')
 动态语言的“鸭子类型”：它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。
+#多重继承
+class sub_class(class_1, class_2):
 dir(x)：获取x对象的属性和方法。
 x.hasattr, x.setattr
 #定义类的属性
@@ -36,11 +38,51 @@ class Student(object):
 def func(self, x):
     pass
 Student.func = func
+#装饰器
+Python内置的@property装饰器就是负责把一个方法变成属性调用的：
+class Student(object):
+    @property
+    def score(self):
+        return self._score
+    #可写属性（需要先定义可读属性）
+    @score.setter
+    def score(self, value):
+        if not isinstance(value, int):
+            raise ValueError('score must be an integer!')
+        if value < 0 or value > 100:
+            raise ValueError('score must between 0 ~ 100!')
+        self._score = value
+#定制类
+class Student(object):
+    def __str__(self):
+        return 'Student object (name: %s)' % self.name
+    __repr__ = __str__
+__str__()返回用户看到的字符串，而__repr__()返回程序开发者看到的字符串        
+class Fib(object):
+    def __init__(self):
+        self.a, self.b = 0, 1 # 初始化两个计数器a，b
+    def __iter__(self):
+        return self # 实例本身就是迭代对象，故返回自己
+    #定义__next__之前必须定义__iter__
+    def __next__(self):
+        self.a, self.b = self.b, self.a + self.b # 计算下一个值
+        if self.a > 100000: # 退出循环的条件
+            raise StopIteration()
+        return self.a # 返回下一个值   
+    def __getitem__(self, n):
+        a, b = 1, 1
+        for x in range(n):
+            a, b = b, a + b
+        return a
+    def __getattr__(self, attr):
+        if attr=='age':
+            return lambda: 25
+        raise AttributeError('\'Student\' object has no attribute \'%s\'' % attr)
+    #对实例自身调用
+     def __call__(self):
+        print('My name is %s.' % self.name)
+       
 
-        
-        
-        
-        
         
         
         
