@@ -8,10 +8,11 @@ class Student(object):
     #定义方法
     def print_score(self):
         print('%s: %s' % (self.name, self.score))
+#类属性
 变量名类似__xxx__的，也就是以双下划线开头，并且以双下划线结尾的，是特殊变量，特殊变量是可以直接访问的，不是private变量。
 一个下划线开头的实例变量名，比如_name，这样的实例变量外部是可以访问的，但是，按照约定俗成的规定，虽然可以被访问，但是，尽量不要访问。 
-私有变量访问方法：>>> bart._Student__name，即私有变量的实现是通过修改属性的名称。
-私有变量不能从外面访问，需要编写专门的访问方法。
+私有变量不能从外面访问，需要编写专门的访问方法,私有变量访问方法：>>> bart._Student__name，即私有变量的实现是通过修改属性的名称。
+x.hasattr, x.setattr
 #继承
 父类
 class Animal(object):
@@ -21,11 +22,8 @@ class Animal(object):
 class Dog(Animal):
     def run(self):
         print('Dog is running...')
-动态语言的“鸭子类型”：它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。
 #多重继承
 class sub_class(class_1, class_2):
-dir(x)：获取x对象的属性和方法。
-x.hasattr, x.setattr
 #定义类的属性
 class Student(object):
     name = 'Student'
