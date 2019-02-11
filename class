@@ -79,6 +79,7 @@ class Fib(object):
     #对实例自身调用
      def __call__(self):
         print('My name is %s.' % self.name)
+classmethod 修饰符对应的函数不需要实例化，不需要 self 参数，但第一个参数需要是表示自身类的 cls 参数，可以来调用类的属性，类的方法，实例化对象等。
 #枚举类
 通过枚举类定义一个class类型，然后，每个常量都是class的一个唯一实例。Python提供了Enum类来实现这个功能：
 from enum import Enum
