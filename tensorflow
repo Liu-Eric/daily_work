@@ -1,0 +1,14 @@
+#使用tensorlfow.keras
+#@Keras is a high-level API to build and train deep learning models. It's used for fast prototyping, advanced research, and production, with three key advantages:User friendly,Modular and composable, Easy to extend.
+
+import tensorflow as tf #required version: 1.12.0
+from tensorflow.keras import layers #version: 2.1.6-tf
+
+model = tf.keras.Sequential()
+
+
+
+
+
+
+
