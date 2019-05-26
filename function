@@ -1,8 +1,33 @@
-###函数定义
-def <name>(arg1, arg2, ..., argN):
+1.1 为何使用函数
+最大化的代码重用和最小化的代码冗余
+流程的分解
+
+1.2 def语句
+函数定义
+def <func_name>(arg1, arg2, ..., argN):
     <statement>
     return <value>
-def语句在运行时将创建一个函数对象并将其赋给一个变量名，函数体内部代码在执行函数时调用。
+    
+def语句在运行时将创建一个函数对象并将其赋给一个变量名，函数名仅仅是函数对象的引用，函数允许任意对象附加到函数属性上。
+def func_name1():
+    pass
+func_name2 = func_name1
+func_name2.attr = value
+
+def语句是实时执行语句，可以出现在任何位置，包括while、if等嵌套结构中。
+if condition：
+    def func()
+else:
+    def func()
+    
+return语句返回函数结果，如果没有return语句，返回None。
+
+1.3函数的多态
+函数的操作的
+
+
+
+
 ###函数参数类型
 位置参数，按传入位置赋值
 默认参数必须是不可变类型，默认参数赋值时尽量按变量名赋值，避免位置混乱。
