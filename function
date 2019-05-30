@@ -85,11 +85,15 @@ def makeactions():
     return acts
 
 2.0 nonlocal语句
-nonlocal语句可以
-2.0 nonlocal语句对
-2.0 nonlocal语句嵌套
-2.0 nonlocal语句
-2.0 nonlocal语句
+nonlocal语句可以对外层嵌套函数中的名称进行读取和写入，nonlocal声明的变量必须已经存在（只能修改不能创建,global可以创建和修改），因为nonlocal的的查找范围从嵌套def开始，而不是声明函数本地开始，nonlocal只会嵌套def作用域中查找。
+def tester(start):
+    state =start
+    def nested(label):
+        nonlocal state
+        print(label, state)
+        state += 1
+    return nested
+
 
 
 
