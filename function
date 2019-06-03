@@ -93,7 +93,9 @@ def tester(start):
         print(label, state)
         state += 1
     return nested
-
+可以
+    return nested使用
+    return nested
 
 
 
