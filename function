@@ -93,11 +93,17 @@ def tester(start):
         print(label, state)
         state += 1
     return nested
-可以
-    return nested使用
-    return nested
-
-
+可以使用带有运算符重载的类来替代nonlocal嵌套函数：
+class tester:
+    def __init__(self,state):
+        self.state = state
+    def __call__(sefl, label):
+        print(label, self.state)
+        self.state += 1
+3.1 函数的参数传递
+参数的传递是通过自动将对象赋值给本地变量名实现的，所有的参数实际上是通过指针进行传递的，作为参数被传递的对象从来不自动拷贝。
+函数内部的参数名的赋值不影响调用者，因为是两个不同的作用域。
+改变参数的可变对象值会对调用者产生影响。
 
 
 
