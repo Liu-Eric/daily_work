@@ -112,10 +112,8 @@ func(value), func(name=value), func(*sequence), func(**dict)
 def func(value), def func(name=value), def func(*name), def func(**name), def func(*args, name), def func(*, name=value)
 在函数的头部，一个简单的变量名是通过位置或者变量名进行匹配的，但是name=value的形式定义了默认的参数值，*name的形式收集了任意的额外不匹配的参数到元组中，并且**name的形式收集了额外的关键字参数到字典中。在python3.0之后的版本，跟在*name或者一个单独的*之后的任何正式的或默认的参数名称，都是keyword-only参数，必须在调用时按照关键字传递。
 在函数的调用中，参数必须以此顺序出现：任何位置参数value，后面跟着任何关键字参数name=value和*sequence形式的组合，后面跟着**duct形式。
-在函数
-在函数的调用中，参数必须以此顺序出现：任何位置参数value，后面跟着任何关键字参数name=value和*sequence形式的组合，后面跟着**duct形式。的
-在函数的调用中，参数必须以此顺序出现：任何位置参数value，后面跟着任何关键字参数name=value和*sequence形式的组合，后面跟着**duct形式。
-
+在函数头部，参数必须以此顺序出现，任何一般参数name，紧跟着任何默认参数name=value，如果有的话，后面是*name的形式，后面紧跟着任何name或name=value 
+keyword-only参数，后面跟着**name的形式。
 
 
 
