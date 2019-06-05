@@ -123,7 +123,9 @@ Python内部通过以下步骤在参数赋值前进行参数匹配：
 6.如果一个参数分配到一个以上的对象，将会报错退出。
 def func(a,b,c): print(a,b,c)
 如果调用函数如下def(1,2,b=2)会报错：func() got multiple values for argument 'b'。
-
+def func(*name) 当调用这个函数时，Python将额外位置相关的参数收集到名为name的元祖中，参数对象可以通过对name迭代获取。
+def func（**name)当调用这个函数时，Python将而额外关键字参数收集到name字典中，可以通过字典获取。
+参数解包
 
 
 
