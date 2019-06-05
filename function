@@ -114,6 +114,15 @@ def func(value), def func(name=value), def func(*name), def func(**name), def fu
 在函数的调用中，参数必须以此顺序出现：任何位置参数value，后面跟着任何关键字参数name=value和*sequence形式的组合，后面跟着**duct形式。
 在函数头部，参数必须以此顺序出现，任何一般参数name，紧跟着任何默认参数name=value，如果有的话，后面是*name的形式，后面紧跟着任何name或name=value 
 keyword-only参数，后面跟着**name的形式。
+Python内部通过以下步骤在参数赋值前进行参数匹配：
+1.通过位置分配非关键字参数。
+2.通过匹配变量名分配关键字参数。
+3.其他额外的非关键字参数分配到*name列表中。
+4.其他额外的关键字参数分配到**name字典中。
+5.用默认值分配给在头部未得到分配的参数。
+6.如果一个参数分配到一个以上的对象，将会报错退出。
+def func(a,b,c): print(a,b,c)
+如果调用函数如下def(1,2,b=2)会报错：func() got multiple values for argument 'b'。
 
 
 
