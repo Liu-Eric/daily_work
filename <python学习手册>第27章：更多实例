@@ -7,4 +7,10 @@ __repr__用以开发者显示额外的细节。
 子类定义中调用超类方法：def func(self): super_class.function(self,...)
 5. 步骤5：定制构造函数
 6. 步骤6：使用内省工具
+内省工具是特殊的属性和函数，允许访问类的一些内部机制。
+instance.__class__
+object.__dict__
 7. 步骤7：把对象存储到数据库中
+pickle:任意python对象和字符串之间序列话
+dbm:实现一个可通过键访问的文件系统，已存储字符串
+shelve:使用另两个模块按照键把python对象存入一个文件中
