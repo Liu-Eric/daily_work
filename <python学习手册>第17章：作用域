@@ -51,3 +51,4 @@ def makeactions():
     for i in range(5):
         acts.append(lambda x,i=i:i**x)
     return acts
+     
