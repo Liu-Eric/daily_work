@@ -24,7 +24,7 @@ lambda x1,x2,x3=10...:expression。#注意默认参数
 lambda与def的区别：
 1.lambda是一个表达式，def是一个语句。
 2.lambda是一个表达式，def是一个语句块。
-3.lambda不能使用判断或者虚幻，可以使用if-else，或者map。
+3.lambda不能使用判断或者循环，可以使用if-else，或者map。
 lambda内的代码也遵循函数作用域法则。
 
 5. 在序列中映射函数：map
