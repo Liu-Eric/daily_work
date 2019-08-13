@@ -12,7 +12,7 @@ keyword-only参数：参数必须通过函数名赋值（python3.0）。
 func(*sequence)/func(**dict):函数解包
 def func(*sequence)/func(**dict):收集匹配多个位置或关键字参数
 def func(*[a],name):keyword-only参数
-函数调用过程中，先位置参数，后关键字参数，后*sequence，后**dict
+函数调用过程中，先位置参数，后关键字参数，后*sequence，后keyword-only参数， 后**dict
 函数定义中，先位置参数，后关键字参数，后*name,后keyword-only参数，后**name
 
 3. 通用set函数
