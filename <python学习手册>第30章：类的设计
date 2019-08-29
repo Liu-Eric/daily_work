@@ -1,4 +1,10 @@
 1. python和OOP
+python不会实现C++中的多态，后一个func定义会覆盖前一个func。
+class C:
+  def func(a,b,c):
+    pass
+  def func(a):
+    pass
 
 2. OOP和继承
 
