@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 在绘图结构中，figure创建窗口，matplotlib中的所有图像都是位于figure对象中，subplot创建子图，子图依赖于窗口，所有的绘画只能在子图上进行。plt表示当前子图，若没有就创建一个子图。
-fig = plt.figure(figsize=(,),dpi=)
+fig = plt.figure(num=,figsize=(,),dpi=)
 ax1 = fig.add_subplot(2,1,1)
 ax2 = fig.add_subplot(2,1,2)
 #方法:一次性创建窗口和多个子图。（空白不绘制）
